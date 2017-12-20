@@ -1,7 +1,7 @@
 <?php
 include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
-include_once 'includes/headers.php';
+
 sec_session_start();
 ?>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ sec_session_start();
                 <a class="nav-link active" data-toggle="tab" href="page1.php">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="page2.php">Change Password</a>
+                <a class="nav-link" data-toggle="tab" href="changePass.php">Change Password</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="includes/logout.php">Logout</a>

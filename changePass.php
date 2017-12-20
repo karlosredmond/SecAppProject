@@ -1,6 +1,5 @@
 <?php
-include_once 'includes/register.inc.php';
-include_once 'includes/db_connect.php';
+include_once 'includes/changePass.inc.php';
 include_once 'includes/functions.php';
  
 sec_session_start();
@@ -11,6 +10,8 @@ sec_session_start();
         <meta charset="UTF-8">
         <title>Secure Login: Protected Page</title>
         <link rel="stylesheet" href="styles/bootstrap.min.css" />
+        <script type="text/JavaScript" src="js/sha512.js"></script> 
+        <script type="text/JavaScript" src="js/forms.js"></script>
     </head>
     <body>
         <?php if (login_check($mysqli) == true) : ?>
@@ -19,10 +20,10 @@ sec_session_start();
                 <a class="nav-link" data-toggle="tab" href="page1.php">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="page2.php">Change Password</a>
+                <a class="nav-link active" data-toggle="tab" href="changePass.php">Change Password</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/includes/logout.php">Logout</a>
+                <a class="nav-link" href="includes/logout.php">Logout</a>
               </li>
             </ul>
             <form action="<?php echo esc_url($_SERVER['REQUEST_URI']); ?>" 
@@ -32,10 +33,10 @@ sec_session_start();
             Confirm New password: <input type="password" 
                                      name="confirmpwd" 
                                      id="confirmpwd" /><br>
+                                     <input type="hidden" name="username" id="username" value = <?php echo $_SESSION['username']; ?> /><br>
             <input type="button" 
                    value="Register" 
-                   onclick="return regformhash(this.form,
-                                   this.form.username,
+                   onclick="return passformhash(this.form,
                                    this.form.password,
                                    this.form.confirmpwd);" /> 
         </form>

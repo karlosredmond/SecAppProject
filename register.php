@@ -1,7 +1,7 @@
 <?php
 include_once 'includes/register.inc.php';
 include_once 'includes/functions.php';
-include_once 'includes/headers.php';
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,7 +11,6 @@ include_once 'includes/headers.php';
         <link rel="stylesheet" href="styles/bootstrap.min.css" />
         <script type="text/JavaScript" src="js/sha512.js"></script> 
         <script type="text/JavaScript" src="js/forms.js"></script>
-        <link rel="stylesheet" href="styles/main.css" />
     </head>
     <body>
         <!-- Registration form to be output if the POST variables are not
